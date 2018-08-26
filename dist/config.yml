@@ -1,0 +1,6 @@
+development:
+  password: a0ac62ca15e3b4250f354fff82236260
+  theme_id: "34293121094"
+  store: fresh4paws-com.myshopify.com
+  ignore_files:
+  - config/settings_data.json
