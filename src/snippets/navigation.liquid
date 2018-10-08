@@ -1,0 +1,82 @@
+{% comment %} Now in the header.liquid file {% endcomment %}
+
+<nav class="navigation" role="navigation">
+  {% assign leftMenu = linklists['main-menu'] %}
+  {% assign rightMenu = linklists['right-menu'] %}
+      <ul>
+        {% for link in leftMenu.links %}
+          {% if link.links != blank %}
+            <li>
+              <a href="{{ link.url }}">
+                {{ link.title }}
+                {% include 'icon-arrow-down' %}
+              </a>
+              <ul>
+                {% for childlink in link.links %}
+                  <li>
+                    <a href="{{ childlink.url }}">
+                      {{ childlink.title }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% else %}
+            <li>
+              <a href="{{ link.url }}">
+                {{ link.title }}
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+        
+
+        <li>
+       
+        <div class="h1 site-header__logo {% if section.settings.logo or inverted_logo_in_use %} display-table use-image" style="max-width:{{ logo_image_width }}px;"{% endif %} itemscope itemtype="http://schema.org/Organization">
+          {% if section.settings.logo != blank %}
+            <a href="/" class="site-header__logo-link--inverted display-table-cell">
+              {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
+              <img width="{{ section.settings.logo_max_width }}" src="{{ section.settings.logo | img_url: image_size }}"
+                  srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+                  alt="{{ section.settings.logo.alt | default: shop.name }}">
+            </a>
+          {% else %}
+            <a href="/" itemprop="url">{{ shop.name }}</a>          
+          {% endif %}
+        </div>
+      </li>
+      {% for link in rightMenu.links %}
+          {% if link.links != blank %}
+            <li>
+              <a href="{{ link.url }}">
+                {{ link.title }}
+                {% include 'icon-arrow-down' %}
+              </a>
+              <ul>
+                {% for childlink in link.links %}
+                  <li>
+                    <a href="{{ childlink.url }}">
+                      {{ childlink.title }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% else %}
+            <li>
+              <a href="{{ link.url }}">
+                {{ link.title }}
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+        
+      </ul>
+    </nav>
+    <a class="cart-icon float-right" href="/cart">
+      {% include 'icon-cart' %}
+      {% if cart.item_count > 0 %}
+        <small>{{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }}</small>
+      {% endif %}
+    </a>

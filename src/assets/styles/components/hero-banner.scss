@@ -7,3 +7,39 @@
   background-position: center;
   background-size: cover;
 }
+
+.hero{
+  &.hero--x-large.hero__overlay{
+    .hero__inner {
+      width: 1000px;
+      margin: 0 auto;
+      color: white;
+      min-height: 500px;
+      position: relative;
+      a{
+        background: $neon-green;
+        color: black;
+        display: inline-block;
+        padding: .3em 1em;
+      }
+      .page-width{
+        position: absolute;
+        bottom: 2em;
+        width: 60%;
+      }
+      .mega-title {
+        font-weight: 600;
+        text-shadow: 1px 1px 3px #000;
+      }
+      .mega-subtitle{
+        p {
+          text-shadow: 1px 1px 2px #000;
+        }
+      }
+    }
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Raleway', sans-serif;
+}

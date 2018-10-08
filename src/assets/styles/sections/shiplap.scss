@@ -1,0 +1,28 @@
+.shiplap-bg-section{
+  padding: 3em 0 2em 0;
+  .shiplap-bg__inner {
+    padding-bottom: 4em;
+    img {
+      max-width: 100%;
+      display: block;
+      width: 100%;
+      border: $red-brown;
+      background: $red-brown;
+      padding: 4px;
+      box-shadow: 1px 1px 3px #444;
+    }
+    h2{
+      color: $red-brown;
+      font-weight: 600;
+    }
+    .mega-subtitle{
+      font-family: 'Raleway', sans-serif;
+    }
+    .hero__btn{
+      background: $red-brown;
+      display: inline-block;
+      padding: .25em 2em;
+      color: white;
+    }
+  }
+}

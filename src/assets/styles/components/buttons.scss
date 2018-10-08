@@ -9,3 +9,10 @@
   user-select: none;
   appearance: none;
 }
+.btn__large {
+  padding: .5em 2em .9em 2em;
+}
+.btn__red {
+  background: $red-brown;
+  color: white;
+}

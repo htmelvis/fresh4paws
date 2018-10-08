@@ -33,7 +33,15 @@
 @import './sections/collection-list';
 @import './sections/featured-collection';
 @import './sections/image-with-text';
+@import './sections/header';
+@import './sections/shiplap';
 
 // Templates
 @import './templates/gift_card';
 @import './templates/product';
+
+// Navigation
+@import './components/navigation';
+
+// Milligram Site Helper + Grid :)
+@import './tools/milligram/milligram';

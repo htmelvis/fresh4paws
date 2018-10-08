@@ -7,11 +7,9 @@
   {%- assign onboarding_title = 'homepage.onboarding.product_title' | t -%}
 {% endif %}
 
-<div data-section-id="{{ section.id }}" data-section-type="product">
-
-
-
-  {% for image in product.images %}
+<div data-section-id="{{ section.id }}" class="row" data-section-type="product">
+  <div class="container">
+    {% for image in product.images %}
     {% capture wrapper_class %}
       {%- unless featured_image == image -%}
         hide
@@ -131,6 +129,7 @@
       {{ product | json }}
     </script>
   {% endunless %}
+  </div>
 </div>
 
 {% schema %}

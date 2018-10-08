@@ -1,0 +1,39 @@
+.navigation {
+  // TODO: Make the ability to reverse colors
+  background: #ffffff;
+  ul {
+    // basic resets
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+    li {
+      display: inline-block;
+      margin-bottom: 0;
+      position: relative;
+      list-style: none;
+      vertical-align: middle;
+      a {
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: .2rem;
+        margin-right: 35px;
+        text-decoration: none;
+        line-height: 6.5rem;
+        color: #222;
+        vertical-align: bottom;
+        font-family: 'Josefin Sans', sans-serif;
+      }
+    }
+  }
+  // .site-header__logo {
+
+  // }  
+  // for visibility and testing remove below this line on complete
+}
+
+.cart-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

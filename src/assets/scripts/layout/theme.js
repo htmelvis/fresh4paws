@@ -25,3 +25,4 @@ if (cookiesEnabled()) {
     'supports-cookies',
   );
 }
+

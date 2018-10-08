@@ -1,0 +1,33 @@
+.site-header {
+    width: 100%;
+    clear: both;
+    margin: 0;
+    background: #ffffff;
+    display: block;
+    left: 0;
+    max-width: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    &:after {
+      clear:both;
+    }
+}
+
+.announcement-bar {
+  width: 100%;
+  background: black;
+  color: white;
+  z-index:9999;
+  padding: .5em .5em 0em 1em;
+  p,a {
+    padding-bottom: .9em;
+    margin-bottom: 0;
+  }
+}
+
+#MainContent {
+  padding-top: 100px;
+}
