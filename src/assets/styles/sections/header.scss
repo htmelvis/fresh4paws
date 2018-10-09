@@ -14,6 +14,12 @@
     &:after {
       clear:both;
     }
+    .cart-icon {
+      background: $color-green;
+      padding: .6em .8em;
+      top: 28%;
+      right: 4%;
+    }
 }
 
 .announcement-bar {

@@ -8,11 +8,13 @@
   text-decoration: none;
   user-select: none;
   appearance: none;
-}
-.btn__large {
-  padding: .5em 2em .9em 2em;
-}
-.btn__red {
-  background: $red-brown;
-  color: white;
+  &.button-large {
+    font-size: 1.5rem;
+  }
+  &.button-green {
+    background: $color-green;
+    color: #1b1b1b;
+  }
+  font-weight: 600;
+  text-transform: uppercase;
 }

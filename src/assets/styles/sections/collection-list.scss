@@ -15,7 +15,7 @@
   &:nth-child(even) {
     .btn{
       background-color: $neon-green;
-    color: black;
+      color: black;
     }
   }
 }
@@ -26,11 +26,15 @@
   width: 100%;
   display: block;
   .btn {
+    font-family: 'Josefin Sans', sans-serif;
     position: absolute;
-    bottom: 5em;
+    top: 70%;
     right: 3em;
-    padding: .6em 4em;
-    
+    padding: .65em 4em .35em 4em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 1px;
   }
 }
 

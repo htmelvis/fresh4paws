@@ -1,7 +1,14 @@
 // Text colors
 $color-body-text: var(--color-body-text);
-$neon-green: #D7DD3A;
-$red-brown: #9A3C28;
+
+$color-initial: #f9f8f8;
+$color-primary: #9A3C28;
+$color-secondary: #1b1b1b;
+$color-green: #D7DD3A;
+$color-brown: $color-primary;
+$color-white: #F9F8F8;
+$neon-green: #d7dd3a;
+$red-brown: #9a3c28;
 
 // Background colors
 $color-body: var(--color-main-background);
@@ -49,6 +56,8 @@ $large: 'large';
 $large-down: 'large-down';
 $large-up: 'large-up';
 $widescreen: 'widescreen';
+
+$mathlete: "mathlete", sans-serif;
 
 $breakpoints: (
   $small '(max-width: #{$grid-medium - 1})',
