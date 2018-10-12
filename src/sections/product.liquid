@@ -1,5 +1,6 @@
-<div data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true">
-
+<div class="container">
+  <div class="row" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true">
+  <div class="column column-40">
   {%- assign current_variant = product.selected_or_first_available_variant -%}
   {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
 
@@ -21,7 +22,7 @@
   {% endfor %}
 
   {% if product.images.size > 1 %}
-    <ul>
+    <ul class="product-thumbs">
       {% for image in product.images %}
         <li>
           <a href="{{ image.src | img_url: '480x480' }}" data-thumbnail-id="{{ image.id }}" data-product-single-thumbnail>
@@ -31,11 +32,12 @@
       {% endfor %}
     </ul>
   {% endif %}
+</div>
 
+
+<div class="column column-60">
   <h1>{{ product.title }}</h1>
   <p>{{ product.vendor }}</p>
-
-
   <form action="/cart/add" method="post" enctype="multipart/form-data">
     {% unless product.has_only_default_variant %}
       {% for option in product.options_with_values %}
@@ -118,6 +120,8 @@
     </script>
   {% endunless %}
 </div>
+</div>
+</div>
 
 {% schema %}
   {
@@ -132,3 +136,6 @@
     ]
   }
 {% endschema %}
+
+  </div>
+</div>

@@ -3,13 +3,9 @@
   <div class="container">
     <header role="banner">
       {% comment %} <h1>{{ collection.title }}</h1> {% endcomment %}
-      {% if collection.description != blank %}
-        <div class="rte">
-          {{ collection.description }}
-        </div>
-      {% endif %}
-
-      {% if collection.all_tags.size > 0 %}
+      
+{% comment %} set to not show tags now {% endcomment %}
+      {% if collection.all_tags.size > 400 %}
         <ul>
           {% for tag in collection.all_tags %}
             {% if current_tags contains tag %}
@@ -108,5 +104,9 @@
   {% if paginate.pages > 1 %}
     {% include 'pagination' %}
   {% endif %}
+
+
+
+  {% section 'shiplap-text-image' %}
 </div>
 {% endpaginate %}
