@@ -2,26 +2,52 @@
 
   <div class="container">
     <div class="row">
-      {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
-  <ul>
-    {% for social in social_accounts %}
-      {%- assign social_handle = social | handleize -%}
-      {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
-      {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
-
-      {% if settings[social_link] != blank %}
-        <li>
-          <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
-            {% include social_icon %}
-            <span class="icon-fallback-text">{{ social }}</span>
-          </a>
-        </li>
-      {% endif %}
-
-    {% endfor %}
-  </ul>
-
-  {% if section.settings.show_payment_icons %}
+  
+  {%- assign footer_linklist = section.settings.footer_linklist -%}
+  <div class="column column-50">
+  {% if linklists[footer_linklist].links.size > 0 %}
+    <div class="link-list-column">
+    <h3>Site Links</h3>
+      <ul>
+      {% for link in linklists[footer_linklist].links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+    </div>
+  {% endif %}  
+  {%- assign footer_linklist_two = section.settings.footer_linklist_two -%}
+  {% if linklists[footer_linklist_two].links.size > 0 %}
+    <div class="link-list-column">
+    <h3>Popular Items</h3>
+    <ul>
+      {% for link in linklists[footer_linklist_two].links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+    </div>
+  {% endif %}
+  </div>  
+  <div class="column column-50">
+    <div class="row">
+      <div class="column column-60">
+        <h3>Enter Your Email Address</h3>
+        <form action="">
+          <input type="text" placeholder="Sign up for newsletter" />
+          <button >Submit</button>
+        </form>
+      </div>
+      <div class="column column-40">
+        <a href="/">
+           <img src="{{ '../assets/images/footer-logo.png' | asset_url | img_tag: 'Logo', 'footer-logo' }} " />
+        </a>
+      </div>
+    </div>
+  </div>
+  
+</div>
+  <div class="row">
+    <div class="column">
+    {% if section.settings.show_payment_icons %}
     {% unless shop.enabled_payment_types == empty %}
       <span class="visually-hidden">{{ 'layout.footer.payment_methods' | t }}</span>
       <ul class="payment-icons">
@@ -33,20 +59,18 @@
       </ul>
     {% endunless %}
   {% endif %}
-
-  {%- assign footer_linklist = section.settings.footer_linklist -%}
-  {% if linklists[footer_linklist].links.size > 0 %}
-    <ul>
-      {% for link in linklists[footer_linklist].links %}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-
-  <div>
-    <small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}. {{ powered_by_link }}</small>
-  </div>
+    
     </div>
+  
+  </div>
+
+  
+
+  
+    </div>
+  </div>
+  <div class="copyright-notice">
+    <small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}. Please review our <a href="/">Privacy Policy &amp; Terms</a></small>
   </div>
 </footer>
 
@@ -58,6 +82,12 @@
         "type": "link_list",
         "id": "footer_linklist",
         "label": "First menu",
+        "default": "footer"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_linklist_two",
+        "label": "Second menu",
         "default": "footer"
       },
       {

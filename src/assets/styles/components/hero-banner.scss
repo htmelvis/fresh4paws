@@ -10,6 +10,9 @@
 
 .hero{
   &.hero--x-large.hero__overlay{
+    @media(min-width: 1400px){
+      background-size: cover;
+    }
     .hero__inner {
       width: 1000px;
       margin: 0 auto;

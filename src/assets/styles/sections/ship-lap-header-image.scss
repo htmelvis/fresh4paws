@@ -1,0 +1,20 @@
+
+.shiplap-bg-section {
+  .shiplap-bg__inner.shiplap-page-header{
+    padding:0;
+    .inner-text-box{
+      h1,h2,h3,h4,h5,h6 {
+        color: #1b1b1b;
+        font-size: 1.6em;
+      }
+      padding-top: 4em;
+    }
+    img {
+      border: 0;
+      background: none;
+      padding: 0;
+      box-shadow: none;
+      margin: 0;
+    }
+  }
+}
