@@ -38,7 +38,7 @@
       </div>
       <div class="column column-40">
         <a href="/">
-           <img src="{{ '../assets/images/footer-logo.png' | asset_url | img_tag: 'Logo', 'footer-logo' }} " />
+           <img src="{{ '../assets/images/footer-logo.png' | asset_url | img_tag: 'Logo', 'footer-logo' }}" />
         </a>
       </div>
     </div>
@@ -46,7 +46,6 @@
   
 </div>
   <div class="row">
-    <div class="column">
     {% if section.settings.show_payment_icons %}
     {% unless shop.enabled_payment_types == empty %}
       <span class="visually-hidden">{{ 'layout.footer.payment_methods' | t }}</span>
@@ -58,10 +57,7 @@
         {% endfor %}
       </ul>
     {% endunless %}
-  {% endif %}
-    
-    </div>
-  
+  {% endif %}  
   </div>
 
   

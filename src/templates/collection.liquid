@@ -38,7 +38,7 @@
         {% endif %}
 
         <h4 class="product-title">
-          <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+          <a href="{{ product.url | within: collection }}">{{ product.title }} {% if product.type == 'Diet' %} - <i style="color:red;">Currently Unavailable</i>{% endif %}</a>
         </h4>
 
         <p class="product-price">

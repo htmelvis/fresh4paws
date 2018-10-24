@@ -25,14 +25,29 @@ footer {
     width: 50%;
 
   }
-  .copyright-notice{
-    clear:both;
-    width: 100%;
+  
+  
+}
+.copyright-notice {
+  clear: both;
+  width: 100%;
+  text-align: center;
+
+  small,
+  p {
+    display: block;
     text-align: center;
-    small {
-      display: block;
-      text-align: center;
-      padding: 1em 0 2em 0;
+    padding: 1em 0 2em 0;
+  }
+}
+.payment-icons {
+  li {
+    float: left;
+    display: inline-block;
+
+    svg {
+      width: 100px;
+      height: 38px;
     }
   }
 }

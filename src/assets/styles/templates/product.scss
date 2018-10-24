@@ -13,3 +13,9 @@
     list-style: none;
   }
 }
+
+header{
+  &.product-title {
+    margin-top: 2em;
+  }
+}

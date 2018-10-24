@@ -36,8 +36,14 @@
 
 
 <div class="column column-60">
-  <h1>{{ product.title }}</h1>
-  <p>{{ product.vendor }}</p>
+  <div class="row">
+   <header class="product-title">
+     <h1>{{ product.title }} {% if product.type == 'Diet' %}
+      - Coming Soon
+      {% endif %}
+    </h1>
+   </header>
+  </div>
   <form action="/cart/add" method="post" enctype="multipart/form-data">
     {% unless product.has_only_default_variant %}
       {% for option in product.options_with_values %}
@@ -91,7 +97,10 @@
       {% endif %}
     </div>
 
-    <button
+    {% if product.type == 'Diet' %}
+      <b><i>Currently Unavailable - Coming Soon</i></b>
+    {% else %}
+      <button
       type="submit"
       name="add"
       data-add-to-cart
@@ -104,6 +113,7 @@
           {% endif %}
         </span>
     </button>
+    {% endif; %}
   </form>
 
   <div class="rte">
